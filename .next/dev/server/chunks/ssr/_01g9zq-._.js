@@ -24,7 +24,7 @@ const metadata = {
         follow: true
     },
     openGraph: {
-        title: "AmsSec OS | Mohammed Almas Akkalath",
+        title: "AMS-sec OS | Mohammed Almas Akkalath",
         description: "Interactive cybersecurity portfolio environment."
     }
 };

@@ -1,6 +1,6 @@
-# AmsSec OS
+# AMS-sec OS
 
-An interactive, fully static cybersecurity portfolio for Mohammed Almas Akkalath. It presents portfolio evidence through a browser-based AmsSec OS desktop as well as a clean recruiter-friendly view at `/recruiter`.
+An interactive, fully static cybersecurity portfolio for Mohammed Almas Akkalath. It presents portfolio evidence through a browser-based AMS-sec OS desktop as well as a clean recruiter-friendly view at `/recruiter`.
 
 ## Stack
 
@@ -21,3 +21,4 @@ npm run build
 ```
 
 The project uses static export (`output: "export"`) and can be deployed to Vercel or any static host from the generated `out/` folder.
+

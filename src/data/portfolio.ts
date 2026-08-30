@@ -14,6 +14,7 @@ export const projects: Project[] = [
   {id:"practice-labs",title:"HTB / TryHackMe / VulnHub Labs",status:"In Progress",summary:"Ongoing hands-on labs. Individual machine names and write-ups coming soon.",environment:["Lab Platforms"],tools:["Linux","Nmap"],skills:["Penetration Testing","Networking"]}
 ];
 export const experience = [
+  {role:"Generalist Expert",org:"Mercor · Contract · London Area, United Kingdom · Remote",dates:"August 2026 – Present",items:["Contributing to AI training and evaluation projects through structured analysis, research, quality review and assessment of AI-generated outputs.","Following detailed project guidelines and evaluating responses against defined criteria.","Identifying inaccuracies or inconsistencies and delivering high-quality work independently in a remote environment."]},
   {role:"President — GreCyberSec",org:"University of Greenwich",dates:"January 2025 – Present",items:["Led 10+ cybersecurity events and workshops.","Coordinated hands-on technical activities covering threat analysis, networking, cybersecurity and attack simulations.","Coordinated 5+ technical sessions and challenges.","Helped grow and manage a community engaging 100+ students."]},
   {role:"Data Entry Specialist",org:"Waves Craft · Abu Dhabi, UAE",dates:"September 2023 – July 2024",items:["Entered and updated 1,000+ business records weekly.","Maintained data confidentiality and integrity.","Verified and cleaned approximately 5,000 records.","Maintained approximately 99.7% data accuracy."]}
 ];

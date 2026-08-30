@@ -1559,4 +1559,16 @@ a {
   background: #66d9e814;
 }
 
+.windowcontent.terminal-shell {
+  background: #06100c;
+  padding: 0;
+}
+
+.terminal-shell .terminal {
+  border: 0;
+  border-radius: 0;
+  height: 100%;
+  padding: 16px;
+}
+
 /*# sourceMappingURL=src_app_globals_162hn9o.css.map*/

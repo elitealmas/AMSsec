@@ -36,7 +36,7 @@ function Home() {
     };
     if (state === "loading") return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
         className: "loading",
-        children: "Mounting AmsSec environment…"
+        children: "Mounting AMS-sec environment…"
     }, void 0, false, {
         fileName: "[project]/src/app/page.tsx",
         lineNumber: 6,
@@ -47,14 +47,14 @@ function Home() {
     }, void 0, false, {
         fileName: "[project]/src/app/page.tsx",
         lineNumber: 6,
-        columnNumber: 616
+        columnNumber: 617
     }, this);
     if (state === "recruiter") return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Recruiter$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Recruiter"], {
         back: ()=>setState("desktop")
     }, void 0, false, {
         fileName: "[project]/src/app/page.tsx",
         lineNumber: 6,
-        columnNumber: 672
+        columnNumber: 673
     }, this);
     if (state === "recovery") return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
         className: "recovery",
@@ -80,7 +80,7 @@ function Home() {
             }, void 0, true, {
                 fileName: "[project]/src/app/page.tsx",
                 lineNumber: 6,
-                columnNumber: 772
+                columnNumber: 773
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 onClick: ()=>setState("desktop"),
@@ -88,13 +88,13 @@ function Home() {
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
                 lineNumber: 6,
-                columnNumber: 1077
+                columnNumber: 1078
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/page.tsx",
         lineNumber: 6,
-        columnNumber: 745
+        columnNumber: 746
     }, this);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Desktop$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Desktop"], {
         initialApp: initial,
@@ -106,7 +106,7 @@ function Home() {
     }, void 0, false, {
         fileName: "[project]/src/app/page.tsx",
         lineNumber: 6,
-        columnNumber: 1160
+        columnNumber: 1161
     }, this);
 }
 _s(Home, "9HtI53dHV5W/YG6PjXhyRZ+OMf0=");
@@ -133,7 +133,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 const logs = [
-    "Initializing AmsSec kernel...",
+    "Initializing AMS-sec kernel...",
     "Loading cybersecurity modules...",
     "Mounting operator filesystem...",
     "Loading professional profile...",
@@ -147,7 +147,7 @@ function Boot({ onComplete }) {
     const [grub, setGrub] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true), [sel, setSel] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0), [shown, setShown] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0), [ready, setReady] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const options = [
         [
-            "AmsSec OS",
+            "AMS-sec OS",
             "desktop"
         ],
         [
@@ -216,7 +216,7 @@ function Boot({ onComplete }) {
             className: "grub",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    children: "GNU GRUB   AmsSec OS"
+                    children: "GNU GRUB   AMS-sec OS"
                 }, void 0, false, {
                     fileName: "[project]/src/components/Boot.tsx",
                     lineNumber: 9,
@@ -235,14 +235,14 @@ function Boot({ onComplete }) {
                     }, name, true, {
                         fileName: "[project]/src/components/Boot.tsx",
                         lineNumber: 9,
-                        columnNumber: 119
+                        columnNumber: 120
                     }, this)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
                     children: "Use ↑ ↓ and ENTER, or select an environment."
                 }, void 0, false, {
                     fileName: "[project]/src/components/Boot.tsx",
                     lineNumber: 9,
-                    columnNumber: 249
+                    columnNumber: 250
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                     className: "skip",
@@ -251,7 +251,7 @@ function Boot({ onComplete }) {
                 }, void 0, false, {
                     fileName: "[project]/src/components/Boot.tsx",
                     lineNumber: 9,
-                    columnNumber: 308
+                    columnNumber: 309
                 }, this)
             ]
         }, void 0, true, {
@@ -272,7 +272,7 @@ function Boot({ onComplete }) {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "bootbrand",
-                        "aria-label": "AmsSec OS",
+                        "aria-label": "AMS-sec OS",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                 viewBox: "0 0 74 74",
@@ -283,51 +283,51 @@ function Boot({ onComplete }) {
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Boot.tsx",
                                         lineNumber: 10,
-                                        columnNumber: 151
+                                        columnNumber: 152
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                         d: "m22 39 10-17 5 10 6-10 10 17-8 12H30l-8-12Z"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Boot.tsx",
                                         lineNumber: 10,
-                                        columnNumber: 198
+                                        columnNumber: 199
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Boot.tsx",
                                 lineNumber: 10,
-                                columnNumber: 107
+                                columnNumber: 108
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                         children: [
-                                            "AmsSec ",
+                                            "AMS-sec ",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: "Secure Boot v1.0"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Boot.tsx",
                                                 lineNumber: 10,
-                                                columnNumber: 275
+                                                columnNumber: 277
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/Boot.tsx",
                                         lineNumber: 10,
-                                        columnNumber: 264
+                                        columnNumber: 265
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
                                         children: "ORIGINAL AMSSEC OS BOOT EMBLEM"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Boot.tsx",
                                         lineNumber: 10,
-                                        columnNumber: 309
+                                        columnNumber: 311
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Boot.tsx",
                                 lineNumber: 10,
-                                columnNumber: 259
+                                columnNumber: 260
                             }, this)
                         ]
                     }, void 0, true, {
@@ -342,7 +342,7 @@ function Boot({ onComplete }) {
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Boot.tsx",
                                     lineNumber: 10,
-                                    columnNumber: 405
+                                    columnNumber: 407
                                 }, this),
                                 " ",
                                 l
@@ -350,7 +350,7 @@ function Boot({ onComplete }) {
                         }, l, true, {
                             fileName: "[project]/src/components/Boot.tsx",
                             lineNumber: 10,
-                            columnNumber: 394
+                            columnNumber: 396
                         }, this)),
                     ready && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                         initial: {
@@ -362,11 +362,11 @@ function Boot({ onComplete }) {
                         className: "bootready",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                children: "AmsSec OS"
+                                children: "AMS-sec OS"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Boot.tsx",
                                 lineNumber: 10,
-                                columnNumber: 514
+                                columnNumber: 516
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 children: [
@@ -374,14 +374,14 @@ function Boot({ onComplete }) {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/src/components/Boot.tsx",
                                         lineNumber: 10,
-                                        columnNumber: 568
+                                        columnNumber: 571
                                     }, this),
                                     "Environment: Cybersecurity & Digital Forensics"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Boot.tsx",
                                 lineNumber: 10,
-                                columnNumber: 532
+                                columnNumber: 535
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>onComplete(options[sel][1]),
@@ -389,13 +389,13 @@ function Boot({ onComplete }) {
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Boot.tsx",
                                 lineNumber: 10,
-                                columnNumber: 627
+                                columnNumber: 630
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Boot.tsx",
                         lineNumber: 10,
-                        columnNumber: 436
+                        columnNumber: 438
                     }, this)
                 ]
             }, void 0, true, {
@@ -410,7 +410,7 @@ function Boot({ onComplete }) {
             }, void 0, false, {
                 fileName: "[project]/src/components/Boot.tsx",
                 lineNumber: 10,
-                columnNumber: 729
+                columnNumber: 732
             }, this)
         ]
     }, void 0, true, {
@@ -639,15 +639,15 @@ function Desktop({ goRecruiter, restart, initialApp }) {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         className: "brand",
                         onClick: ()=>setLaunch((v)=>!v),
-                        "aria-label": "Open AmsSec applications",
+                        "aria-label": "Open AMS-sec applications",
                         children: [
                             "◈ ",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                children: "AmsSec"
+                                children: "AMS-sec"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Desktop.tsx",
                                 lineNumber: 16,
-                                columnNumber: 308
+                                columnNumber: 309
                             }, this)
                         ]
                     }, void 0, true, {
@@ -667,7 +667,7 @@ function Desktop({ goRecruiter, restart, initialApp }) {
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Desktop.tsx",
                                 lineNumber: 16,
-                                columnNumber: 359
+                                columnNumber: 361
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>open("terminal"),
@@ -678,7 +678,7 @@ function Desktop({ goRecruiter, restart, initialApp }) {
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Desktop.tsx",
                                 lineNumber: 16,
-                                columnNumber: 433
+                                columnNumber: 435
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>open("projects"),
@@ -689,13 +689,13 @@ function Desktop({ goRecruiter, restart, initialApp }) {
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Desktop.tsx",
                                 lineNumber: 16,
-                                columnNumber: 517
+                                columnNumber: 519
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Desktop.tsx",
                         lineNumber: 16,
-                        columnNumber: 336
+                        columnNumber: 338
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "status",
@@ -705,21 +705,21 @@ function Desktop({ goRecruiter, restart, initialApp }) {
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Desktop.tsx",
                                 lineNumber: 16,
-                                columnNumber: 629
+                                columnNumber: 631
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$lucide$2d$react$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__.ShieldCheck, {
                                 size: 15
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Desktop.tsx",
                                 lineNumber: 16,
-                                columnNumber: 648
+                                columnNumber: 650
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$lucide$2d$react$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__.Volume2, {
                                 size: 15
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Desktop.tsx",
                                 lineNumber: 16,
-                                columnNumber: 674
+                                columnNumber: 676
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: clock.toLocaleTimeString([], {
@@ -729,7 +729,7 @@ function Desktop({ goRecruiter, restart, initialApp }) {
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Desktop.tsx",
                                 lineNumber: 16,
-                                columnNumber: 696
+                                columnNumber: 698
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: goRecruiter,
@@ -737,13 +737,13 @@ function Desktop({ goRecruiter, restart, initialApp }) {
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Desktop.tsx",
                                 lineNumber: 16,
-                                columnNumber: 773
+                                columnNumber: 775
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Desktop.tsx",
                         lineNumber: 16,
-                        columnNumber: 605
+                        columnNumber: 607
                     }, this)
                 ]
             }, void 0, true, {
@@ -881,7 +881,7 @@ function Desktop({ goRecruiter, restart, initialApp }) {
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>open("about"),
-                        children: "About AmsSec"
+                        children: "About AMS-sec"
                     }, void 0, false, {
                         fileName: "[project]/src/components/Desktop.tsx",
                         lineNumber: 20,
@@ -899,35 +899,35 @@ function Desktop({ goRecruiter, restart, initialApp }) {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$lucide$2d$react$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__.ShieldCheck, {}, void 0, false, {
                         fileName: "[project]/src/components/Desktop.tsx",
                         lineNumber: 20,
-                        columnNumber: 465
+                        columnNumber: 466
                     }, this),
                     " ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
-                                children: "AmsSec Security"
+                                children: "AMS-sec Security"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Desktop.tsx",
                                 lineNumber: 20,
-                                columnNumber: 488
+                                columnNumber: 489
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                 fileName: "[project]/src/components/Desktop.tsx",
                                 lineNumber: 20,
-                                columnNumber: 510
+                                columnNumber: 512
                             }, this),
                             toast
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Desktop.tsx",
                         lineNumber: 20,
-                        columnNumber: 482
+                        columnNumber: 483
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Desktop.tsx",
                 lineNumber: 20,
-                columnNumber: 442
+                columnNumber: 443
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 className: "restart",
@@ -938,14 +938,14 @@ function Desktop({ goRecruiter, restart, initialApp }) {
                     }, void 0, false, {
                         fileName: "[project]/src/components/Desktop.tsx",
                         lineNumber: 20,
-                        columnNumber: 582
+                        columnNumber: 584
                     }, this),
-                    " Restart AmsSec OS"
+                    " Restart AMS-sec OS"
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Desktop.tsx",
                 lineNumber: 20,
-                columnNumber: 536
+                columnNumber: 538
             }, this)
         ]
     }, void 0, true, {
@@ -978,13 +978,13 @@ function Launcher({ open }) {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "launcher-title",
                 children: [
-                    "AmsSec ",
+                    "AMS-sec ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
                         children: "APPLICATIONS"
                     }, void 0, false, {
                         fileName: "[project]/src/components/Desktop.tsx",
                         lineNumber: 21,
-                        columnNumber: 363
+                        columnNumber: 364
                     }, this)
                 ]
             }, void 0, true, {
@@ -1000,7 +1000,7 @@ function Launcher({ open }) {
             }, void 0, false, {
                 fileName: "[project]/src/components/Desktop.tsx",
                 lineNumber: 21,
-                columnNumber: 396
+                columnNumber: 397
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "appgrid",
@@ -1016,24 +1016,24 @@ function Launcher({ open }) {
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Desktop.tsx",
                                         lineNumber: 21,
-                                        columnNumber: 617
+                                        columnNumber: 618
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Desktop.tsx",
                                 lineNumber: 21,
-                                columnNumber: 603
+                                columnNumber: 604
                             }, this)
                         ]
                     }, a.id, true, {
                         fileName: "[project]/src/components/Desktop.tsx",
                         lineNumber: 21,
-                        columnNumber: 542
+                        columnNumber: 543
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/Desktop.tsx",
                 lineNumber: 21,
-                columnNumber: 503
+                columnNumber: 504
             }, this)
         ]
     }, void 0, true, {
@@ -1149,7 +1149,7 @@ function Window({ win, app, children, close, update, focus }) {
                 columnNumber: 682
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "windowcontent",
+                className: `windowcontent ${app.id === "terminal" ? "terminal-shell" : ""}`,
                 children: children
             }, void 0, false, {
                 fileName: "[project]/src/components/Desktop.tsx",
@@ -2591,13 +2591,13 @@ function Recruiter({ back }) {
                         className: "rbrand",
                         href: "#top",
                         children: [
-                            "AmsSec",
+                            "AMS-sec",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: " / PROFILE"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 132
+                                columnNumber: 133
                             }, this)
                         ]
                     }, void 0, true, {
@@ -2613,7 +2613,7 @@ function Recruiter({ back }) {
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 164
+                                columnNumber: 165
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                 href: "#projects",
@@ -2621,7 +2621,7 @@ function Recruiter({ back }) {
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 200
+                                columnNumber: 201
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                 href: "#contact",
@@ -2629,28 +2629,28 @@ function Recruiter({ back }) {
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 232
+                                columnNumber: 233
                             }, this),
                             back ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: back,
-                                children: "Return to AmsSec OS"
+                                children: "Return to AMS-sec OS"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 268
+                                columnNumber: 269
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                 href: "/",
-                                children: "Open AmsSec OS"
+                                children: "Open AMS-sec OS"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 320
+                                columnNumber: 322
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Recruiter.tsx",
                         lineNumber: 4,
-                        columnNumber: 159
+                        columnNumber: 160
                     }, this)
                 ]
             }, void 0, true, {
@@ -2667,7 +2667,7 @@ function Recruiter({ back }) {
                     }, void 0, false, {
                         fileName: "[project]/src/components/Recruiter.tsx",
                         lineNumber: 4,
-                        columnNumber: 398
+                        columnNumber: 401
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                         children: [
@@ -2675,14 +2675,14 @@ function Recruiter({ back }) {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 460
+                                columnNumber: 463
                             }, this),
                             "Akkalath"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Recruiter.tsx",
                         lineNumber: 4,
-                        columnNumber: 442
+                        columnNumber: 445
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "lede",
@@ -2690,7 +2690,7 @@ function Recruiter({ back }) {
                     }, void 0, false, {
                         fileName: "[project]/src/components/Recruiter.tsx",
                         lineNumber: 4,
-                        columnNumber: 478
+                        columnNumber: 481
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "actions",
@@ -2703,14 +2703,14 @@ function Recruiter({ back }) {
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Recruiter.tsx",
                                         lineNumber: 4,
-                                        columnNumber: 580
+                                        columnNumber: 583
                                     }, this),
                                     " Get in touch"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 544
+                                columnNumber: 547
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                 href: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$portfolio$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["profile"].linkedin,
@@ -2722,13 +2722,13 @@ function Recruiter({ back }) {
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Recruiter.tsx",
                                         lineNumber: 4,
-                                        columnNumber: 666
+                                        columnNumber: 669
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 614
+                                columnNumber: 617
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                 href: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$portfolio$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["profile"].github,
@@ -2740,25 +2740,25 @@ function Recruiter({ back }) {
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Recruiter.tsx",
                                         lineNumber: 4,
-                                        columnNumber: 743
+                                        columnNumber: 746
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 695
+                                columnNumber: 698
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Recruiter.tsx",
                         lineNumber: 4,
-                        columnNumber: 519
+                        columnNumber: 522
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Recruiter.tsx",
                 lineNumber: 4,
-                columnNumber: 363
+                columnNumber: 366
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 className: "rsection",
@@ -2769,7 +2769,7 @@ function Recruiter({ back }) {
                     }, void 0, false, {
                         fileName: "[project]/src/components/Recruiter.tsx",
                         lineNumber: 4,
-                        columnNumber: 818
+                        columnNumber: 821
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "twocol",
@@ -2779,7 +2779,7 @@ function Recruiter({ back }) {
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 874
+                                columnNumber: 877
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 children: [
@@ -2790,25 +2790,25 @@ function Recruiter({ back }) {
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Recruiter.tsx",
                                                 lineNumber: 4,
-                                                columnNumber: 944
+                                                columnNumber: 947
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/src/components/Recruiter.tsx",
                                                 lineNumber: 4,
-                                                columnNumber: 974
+                                                columnNumber: 977
                                             }, this),
                                             __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$portfolio$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["profile"].degree,
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/src/components/Recruiter.tsx",
                                                 lineNumber: 4,
-                                                columnNumber: 995
+                                                columnNumber: 998
                                             }, this),
                                             __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$portfolio$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["profile"].dates
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/Recruiter.tsx",
                                         lineNumber: 4,
-                                        columnNumber: 941
+                                        columnNumber: 944
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: [
@@ -2817,19 +2817,19 @@ function Recruiter({ back }) {
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Recruiter.tsx",
                                                 lineNumber: 4,
-                                                columnNumber: 1022
+                                                columnNumber: 1025
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/src/components/Recruiter.tsx",
                                                 lineNumber: 4,
-                                                columnNumber: 1042
+                                                columnNumber: 1045
                                             }, this),
                                             "ISC² Certified in Cybersecurity (CC)"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/Recruiter.tsx",
                                         lineNumber: 4,
-                                        columnNumber: 1019
+                                        columnNumber: 1022
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: [
@@ -2838,37 +2838,37 @@ function Recruiter({ back }) {
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Recruiter.tsx",
                                                 lineNumber: 4,
-                                                columnNumber: 1090
+                                                columnNumber: 1093
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/src/components/Recruiter.tsx",
                                                 lineNumber: 4,
-                                                columnNumber: 1107
+                                                columnNumber: 1110
                                             }, this),
                                             "President, GreCyberSec Society"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/Recruiter.tsx",
                                         lineNumber: 4,
-                                        columnNumber: 1087
+                                        columnNumber: 1090
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 936
+                                columnNumber: 939
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Recruiter.tsx",
                         lineNumber: 4,
-                        columnNumber: 850
+                        columnNumber: 853
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Recruiter.tsx",
                 lineNumber: 4,
-                columnNumber: 788
+                columnNumber: 791
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 id: "experience",
@@ -2880,7 +2880,7 @@ function Recruiter({ back }) {
                     }, void 0, false, {
                         fileName: "[project]/src/components/Recruiter.tsx",
                         lineNumber: 4,
-                        columnNumber: 1214
+                        columnNumber: 1217
                     }, this),
                     __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$portfolio$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["experience"].map((e)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
                             className: "rexperience",
@@ -2892,19 +2892,19 @@ function Recruiter({ back }) {
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Recruiter.tsx",
                                             lineNumber: 4,
-                                            columnNumber: 1319
+                                            columnNumber: 1322
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                             fileName: "[project]/src/components/Recruiter.tsx",
                                             lineNumber: 4,
-                                            columnNumber: 1335
+                                            columnNumber: 1338
                                         }, this),
                                         e.org
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/Recruiter.tsx",
                                     lineNumber: 4,
-                                    columnNumber: 1314
+                                    columnNumber: 1317
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     children: [
@@ -2913,7 +2913,7 @@ function Recruiter({ back }) {
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Recruiter.tsx",
                                             lineNumber: 4,
-                                            columnNumber: 1358
+                                            columnNumber: 1361
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
                                             children: e.items.map((x)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -2921,30 +2921,30 @@ function Recruiter({ back }) {
                                                 }, x, false, {
                                                     fileName: "[project]/src/components/Recruiter.tsx",
                                                     lineNumber: 4,
-                                                    columnNumber: 1395
+                                                    columnNumber: 1398
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Recruiter.tsx",
                                             lineNumber: 4,
-                                            columnNumber: 1375
+                                            columnNumber: 1378
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/Recruiter.tsx",
                                     lineNumber: 4,
-                                    columnNumber: 1353
+                                    columnNumber: 1356
                                 }, this)
                             ]
                         }, e.role, true, {
                             fileName: "[project]/src/components/Recruiter.tsx",
                             lineNumber: 4,
-                            columnNumber: 1268
+                            columnNumber: 1271
                         }, this))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Recruiter.tsx",
                 lineNumber: 4,
-                columnNumber: 1168
+                columnNumber: 1171
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 id: "projects",
@@ -2956,7 +2956,7 @@ function Recruiter({ back }) {
                     }, void 0, false, {
                         fileName: "[project]/src/components/Recruiter.tsx",
                         lineNumber: 4,
-                        columnNumber: 1494
+                        columnNumber: 1497
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "rprojects",
@@ -2967,21 +2967,21 @@ function Recruiter({ back }) {
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Recruiter.tsx",
                                         lineNumber: 4,
-                                        columnNumber: 1602
+                                        columnNumber: 1605
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         children: p.title
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Recruiter.tsx",
                                         lineNumber: 4,
-                                        columnNumber: 1627
+                                        columnNumber: 1630
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: p.summary
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Recruiter.tsx",
                                         lineNumber: 4,
-                                        columnNumber: 1645
+                                        columnNumber: 1648
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: p.skills.map((s)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2989,29 +2989,29 @@ function Recruiter({ back }) {
                                             }, s, false, {
                                                 fileName: "[project]/src/components/Recruiter.tsx",
                                                 lineNumber: 4,
-                                                columnNumber: 1685
+                                                columnNumber: 1688
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Recruiter.tsx",
                                         lineNumber: 4,
-                                        columnNumber: 1663
+                                        columnNumber: 1666
                                     }, this)
                                 ]
                             }, p.id, true, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 1582
+                                columnNumber: 1585
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/components/Recruiter.tsx",
                         lineNumber: 4,
-                        columnNumber: 1538
+                        columnNumber: 1541
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Recruiter.tsx",
                 lineNumber: 4,
-                columnNumber: 1450
+                columnNumber: 1453
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 className: "rsection",
@@ -3022,7 +3022,7 @@ function Recruiter({ back }) {
                     }, void 0, false, {
                         fileName: "[project]/src/components/Recruiter.tsx",
                         lineNumber: 4,
-                        columnNumber: 1775
+                        columnNumber: 1778
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "rskills",
@@ -3033,31 +3033,31 @@ function Recruiter({ back }) {
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Recruiter.tsx",
                                         lineNumber: 4,
-                                        columnNumber: 1904
+                                        columnNumber: 1907
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: s.join(" · ")
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Recruiter.tsx",
                                         lineNumber: 4,
-                                        columnNumber: 1916
+                                        columnNumber: 1919
                                     }, this)
                                 ]
                             }, g, true, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 1887
+                                columnNumber: 1890
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/components/Recruiter.tsx",
                         lineNumber: 4,
-                        columnNumber: 1820
+                        columnNumber: 1823
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Recruiter.tsx",
                 lineNumber: 4,
-                columnNumber: 1745
+                columnNumber: 1748
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 className: "rsection",
@@ -3068,7 +3068,7 @@ function Recruiter({ back }) {
                     }, void 0, false, {
                         fileName: "[project]/src/components/Recruiter.tsx",
                         lineNumber: 4,
-                        columnNumber: 1996
+                        columnNumber: 1999
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "certrow",
@@ -3077,18 +3077,18 @@ function Recruiter({ back }) {
                             }, c, false, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 2083
+                                columnNumber: 2086
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/components/Recruiter.tsx",
                         lineNumber: 4,
-                        columnNumber: 2035
+                        columnNumber: 2038
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Recruiter.tsx",
                 lineNumber: 4,
-                columnNumber: 1966
+                columnNumber: 1969
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 id: "contact",
@@ -3099,14 +3099,14 @@ function Recruiter({ back }) {
                     }, void 0, false, {
                         fileName: "[project]/src/components/Recruiter.tsx",
                         lineNumber: 4,
-                        columnNumber: 2170
+                        columnNumber: 2173
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                         children: "Let's build safer systems."
                     }, void 0, false, {
                         fileName: "[project]/src/components/Recruiter.tsx",
                         lineNumber: 4,
-                        columnNumber: 2198
+                        columnNumber: 2201
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                         href: `mailto:${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$portfolio$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["profile"].email}`,
@@ -3116,13 +3116,13 @@ function Recruiter({ back }) {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__["ArrowUpRight"], {}, void 0, false, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 2290
+                                columnNumber: 2293
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Recruiter.tsx",
                         lineNumber: 4,
-                        columnNumber: 2238
+                        columnNumber: 2241
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         children: [
@@ -3133,7 +3133,7 @@ function Recruiter({ back }) {
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 2314
+                                columnNumber: 2317
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                 href: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$portfolio$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["profile"].github,
@@ -3142,7 +3142,7 @@ function Recruiter({ back }) {
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 2369
+                                columnNumber: 2372
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 disabled: true,
@@ -3153,26 +3153,26 @@ function Recruiter({ back }) {
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Recruiter.tsx",
                                         lineNumber: 4,
-                                        columnNumber: 2466
+                                        columnNumber: 2469
                                     }, this),
                                     " Download CV"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Recruiter.tsx",
                                 lineNumber: 4,
-                                columnNumber: 2420
+                                columnNumber: 2423
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Recruiter.tsx",
                         lineNumber: 4,
-                        columnNumber: 2309
+                        columnNumber: 2312
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Recruiter.tsx",
                 lineNumber: 4,
-                columnNumber: 2125
+                columnNumber: 2128
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
                 children: [
@@ -3183,7 +3183,7 @@ function Recruiter({ back }) {
             }, void 0, true, {
                 fileName: "[project]/src/components/Recruiter.tsx",
                 lineNumber: 4,
-                columnNumber: 2524
+                columnNumber: 2527
             }, this)
         ]
     }, void 0, true, {
@@ -3226,7 +3226,7 @@ function Terminal({ openApp }) {
     _s();
     const [cwd, setCwd] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]), [lines, setLines] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([
         {
-            output: "Welcome to AmsSec OS. Type 'help' to inspect available commands."
+            output: "Welcome to AMS-sec OS. Type 'help' to inspect available commands."
         }
     ]), [value, setValue] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(""), [history, setHistory] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]), [hi, setHi] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(-1);
     const input = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
@@ -3256,7 +3256,7 @@ function Terminal({ openApp }) {
         else if (head === "ls") out = list(node);
         else if (head === "pwd") out = pathStr(cwd);
         else if (head === "whoami") out = "almas — cybersecurity & digital forensics operator";
-        else if (head === "uname") out = "AmsSec OS 1.0.0 browser-x86_64";
+        else if (head === "uname") out = "AMS-sec OS 1.0.0 browser-x86_64";
         else if (head === "date") out = new Date().toString();
         else if (head === "echo") out = arg;
         else if (head === "clear") {
@@ -3285,14 +3285,14 @@ function Terminal({ openApp }) {
             out = f?.content ?? `cat: ${arg}: No such file`;
         } else if (head === "tree") out = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$filesystem$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["flatten"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$filesystem$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["filesystem"]).map(({ path, file })=>`${"  ".repeat(path.split("/").length - 3)}${file.type === "folder" ? "▸ " : "· "}${file.name}`).join("\n");
         else if (head === "find") out = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$filesystem$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["flatten"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$filesystem$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["filesystem"]).filter((x)=>x.file.name.toLowerCase().includes(arg.toLowerCase())).map((x)=>x.path).join("\n") || "No matches.";
-        else if (head === "grep") out = "grep searches the AmsSec virtual filesystem. Try: find project";
+        else if (head === "grep") out = "grep searches the AMS-sec virtual filesystem. Try: find project";
         else if (head === "open") {
             const found = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$filesystem$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["flatten"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$filesystem$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["filesystem"]).find((x)=>x.file.name === arg || x.file.name.replace(/\..*/, "") === arg);
             if (found?.file.app) {
                 openApp(found.file.app);
                 out = `Opening ${found.file.name}...`;
             } else out = `open: ${arg}: not found`;
-        } else if (head === "neofetch") out = `     █████╗ ███╗   ███╗ ███████╗\n    ██╔══██╗████╗ ████║ ██╔════╝     almas@amssec\n    ███████║██╔████╔██║ ███████╗     ─────────────────────\n    ██╔══██║██║╚██╔╝██║ ╚════██║     OS: AmsSec OS\n    ██║  ██║██║ ╚═╝ ██║ ███████║     Host: University of Greenwich\n    ╚═╝  ╚═╝╚═╝     ╚═╝ ╚══════╝     Role: Cybersecurity Student\n                                      Certification: ISC² CC\n                                      Shell: amssec-shell`;
+        } else if (head === "neofetch") out = `     █████╗ ███╗   ███╗ ███████╗\n    ██╔══██╗████╗ ████║ ██╔════╝     almas@amssec\n    ███████║██╔████╔██║ ███████╗     ─────────────────────\n    ██╔══██║██║╚██╔╝██║ ╚════██║     OS: AMS-sec OS\n    ██║  ██║██║ ╚═╝ ██║ ███████║     Host: University of Greenwich\n    ╚═╝  ╚═╝╚═╝     ╚═╝ ╚══════╝     Role: Cybersecurity Student\n                                      Certification: ISC² CC\n                                      Shell: amssec-shell`;
         else if (head === "skills") {
             openApp("skills");
             out = "Opening evidence-based skills inventory...";
@@ -3329,12 +3329,12 @@ function Terminal({ openApp }) {
         } else if (cmd === "sudo hire almas") {
             out = "Evaluating candidate...\n\nCybersecurity ............ PASS\nTechnical projects ....... PASS\nLeadership ............... PASS\nCuriosity ................ PASS\n\nOpening secure contact channel...";
             openApp("contact");
-        } else if (cmd === "sudo su") out = "Permission denied.\n\nAmsSec enforces least privilege.";
-        else if (cmd === "rm -rf /") out = "Operation blocked by AmsSec Endpoint Protection.\nThreat prevented. Incident logged as AMS-0001.";
-        else if (cmd === "nmap almas") out = "Starting AmsSec Nmap simulation...\n\nPORT      STATE    SERVICE\n22/tcp    open     cybersecurity\n80/tcp    open     portfolio\n443/tcp   open     cloud-security\n1337/tcp  open     ctf-labs\n8080/tcp  open     digital-forensics\n\n5 services discovered.";
+        } else if (cmd === "sudo su") out = "Permission denied.\n\nAMS-sec enforces least privilege.";
+        else if (cmd === "rm -rf /") out = "Operation blocked by AMS-sec Endpoint Protection.\nThreat prevented. Incident logged as AMS-0001.";
+        else if (cmd === "nmap almas") out = "Starting AMS-sec Nmap simulation...\n\nPORT      STATE    SERVICE\n22/tcp    open     cybersecurity\n80/tcp    open     portfolio\n443/tcp   open     cloud-security\n1337/tcp  open     ctf-labs\n8080/tcp  open     digital-forensics\n\n5 services discovered.";
         else if (cmd === "ping recruiter") out = "PING recruiter.amssec [READY]: career connection established.";
         else if (cmd === "fortune") out = "Security through curiosity. Build. Break. Understand. Improve.";
-        else if (cmd === "cat /etc/motd") out = "Welcome to AmsSec OS.\n\nSecurity through curiosity.\nBuild. Break. Understand. Improve.";
+        else if (cmd === "cat /etc/motd") out = "Welcome to AMS-sec OS.\n\nSecurity through curiosity.\nBuild. Break. Understand. Improve.";
         else out = `amssec-shell: ${head}: command not found`;
         setLines((l)=>[
                 ...l,
@@ -3435,7 +3435,7 @@ function Terminal({ openApp }) {
         columnNumber: 69
     }, this);
 }
-_s(Terminal, "D8YvvEN6L5QDqQkFka25sem8+f8=");
+_s(Terminal, "vvK4XqAnfjE7q6qusmwzezm1oQg=");
 _c = Terminal;
 var _c;
 __turbopack_context__.k.register(_c, "Terminal");
@@ -3766,6 +3766,16 @@ const projects = [
     }
 ];
 const experience = [
+    {
+        role: "Generalist Expert",
+        org: "Mercor · Contract · London Area, United Kingdom · Remote",
+        dates: "August 2026 – Present",
+        items: [
+            "Contributing to AI training and evaluation projects through structured analysis, research, quality review and assessment of AI-generated outputs.",
+            "Following detailed project guidelines and evaluating responses against defined criteria.",
+            "Identifying inaccuracies or inconsistencies and delivering high-quality work independently in a remote environment."
+        ]
+    },
     {
         role: "President — GreCyberSec",
         org: "University of Greenwich",
