@@ -1,10 +1,22 @@
 import type { Metadata } from "next";
 import "./globals.css";
-export const metadata: Metadata = {
-  title: "Mohammed Almas Akkalath | Cybersecurity & Digital Forensics",
-  description: "Cybersecurity and Digital Forensics portfolio of Mohammed Almas Akkalath, University of Greenwich student, ISC² CC certified and President of GreCyberSec.",
-  robots: { index: true, follow: true },
-  openGraph: { title: "AMS-sec OS | Mohammed Almas Akkalath", description: "Interactive cybersecurity portfolio environment." }
-};
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) { return <html lang="en"><body>{children}</body></html>; }
 
+const title = "Mohammed Almas Akkalath | Cybersecurity Portfolio";
+const description = "Cybersecurity and Digital Forensics student focused on SOC operations, threat detection, incident response, digital forensics and security monitoring.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  robots: { index: true, follow: true },
+  openGraph: {
+    title,
+    description,
+    type: "website",
+    locale: "en_GB",
+    siteName: "Mohammed Almas Akkalath | AMS-sec",
+  },
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="en"><body>{children}</body></html>;
+}

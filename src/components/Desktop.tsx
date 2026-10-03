@@ -1,37 +1,154 @@
 "use client";
-import {useEffect,useState} from "react";
-import {AnimatePresence,motion,useDragControls} from "framer-motion";
+
+import { useCallback, useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion, useDragControls, useReducedMotion } from "framer-motion";
 import * as I from "lucide-react";
-import {Terminal} from "./Terminal";
-import {InteractionLayer} from "./InteractionLayer";
-import {profile,projects,experience,skillGroups,certifications} from "@/data/portfolio";
-import {filesystem,resolvePath,VFile} from "@/data/filesystem";
-type App={id:string;name:string;category:string;icon:keyof typeof I};
-const apps:App[]=[{id:"about",name:"About Me",category:"Portfolio",icon:"UserRound"},{id:"experience",name:"Experience",category:"Portfolio",icon:"ScrollText"},{id:"projects",name:"Projects",category:"Portfolio",icon:"FolderKanban"},{id:"grecybersec",name:"GreCyberSec",category:"Portfolio",icon:"Radio"},{id:"certifications",name:"Certifications",category:"Security",icon:"BadgeCheck"},{id:"education",name:"Education",category:"Portfolio",icon:"GraduationCap"},{id:"skills",name:"Skills",category:"Development",icon:"ShieldCheck"},{id:"files",name:"File Manager",category:"System",icon:"FolderOpen"},{id:"terminal",name:"Terminal",category:"System",icon:"TerminalSquare"},{id:"monitor",name:"System Monitor",category:"System",icon:"Activity"},{id:"mitre",name:"ATT&CK Matrix",category:"Security",icon:"Grid3X3"},{id:"network",name:"Network Map",category:"Security",icon:"Network"},{id:"contact",name:"Contact",category:"Portfolio",icon:"Send"},{id:"cv",name:"CV Viewer",category:"Portfolio",icon:"FileText"},{id:"settings",name:"Settings",category:"System",icon:"Settings"}];
-const icon=(name:keyof typeof I,size=20)=>{const C=I[name] as React.ComponentType<{size?:number}>;return <C size={size}/>};
-type Win={id:string;z:number;min?:boolean;max?:boolean};
-export function Desktop({goRecruiter,restart,initialApp}:{goRecruiter:()=>void;restart:()=>void;initialApp?:string}){const [wins,setWins]=useState<Win[]>(initialApp?[{id:initialApp,z:2}]:[]),[launch,setLaunch]=useState(false),[clock,setClock]=useState(new Date()),[menu,setMenu]=useState<{x:number;y:number}|null>(null),[toast,setToast]=useState("");
- useEffect(()=>{const t=setInterval(()=>setClock(new Date()),1000);const k=(e:KeyboardEvent)=>{if(e.ctrlKey&&e.altKey&&e.key.toLowerCase()==="t"){e.preventDefault();open("terminal")}if(e.ctrlKey&&e.key.toLowerCase()==="k"){e.preventDefault();setLaunch(true)}if(e.key==="Escape"){setLaunch(false);setMenu(null)}};window.addEventListener("keydown",k);setTimeout(()=>setToast(""),4500);return()=>{clearInterval(t);window.removeEventListener("keydown",k)}},[]);
- const open=(id:string)=>{setLaunch(false);setMenu(null);setWins(w=>w.some(x=>x.id===id)?w.map(x=>x.id===id?{...x,min:false,z:Math.max(...w.map(v=>v.z),1)+1}:x):[...w,{id,z:Math.max(...w.map(v=>v.z),1)+1}])}; const close=(id:string)=>setWins(w=>w.filter(x=>x.id!==id)); const update=(id:string,k:"min"|"max")=>setWins(w=>w.map(x=>x.id===id?{...x,[k]:!x[k]}:x));
- return <main className="desktop" onContextMenu={e=>{if((e.target as HTMLElement).closest(".window"))return;e.preventDefault();setMenu({x:e.clientX,y:e.clientY})}}><InteractionLayer/><header className="topbar"><button className="brand" onClick={()=>setLaunch(v=>!v)} aria-label="Open AMS-sec applications">◈ <span>AMS-sec</span></button><div className="quick"><button onClick={()=>open("files")}>{icon("FolderOpen",16)} Files</button><button onClick={()=>open("terminal")}>{icon("TerminalSquare",16)} Terminal</button><button onClick={()=>open("projects")}>{icon("FolderKanban",16)} Projects</button></div><div className="status"><I.Wifi size={15}/><I.ShieldCheck size={15}/><I.Volume2 size={15}/><span>{clock.toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})}</span><button onClick={goRecruiter}>Recruiter Mode</button></div></header>
- <section className="desktop-icons">{apps.filter(a=>["about","projects","experience","grecybersec","certifications","skills","terminal","contact"].includes(a.id)).map(a=><button className="deskicon" key={a.id} onDoubleClick={()=>open(a.id)} onClick={()=>open(a.id)}>{icon(a.icon,31)}<span>{a.id==="about"?"about_me.txt":a.name}</span></button>)}</section>
- <AnimatePresence>{wins.filter(w=>!w.min).map(w=><Window key={`${w.id}-${w.max?"max":"window"}`} win={w} app={apps.find(a=>a.id===w.id)||{id:w.id,name:w.id,category:"",icon:"FileText"}} focus={()=>setWins(s=>s.map(x=>x.id===w.id?{...x,z:Math.max(...s.map(v=>v.z))+1}:x))} close={close} update={update}>{content(w.id,open,goRecruiter)}</Window>)}</AnimatePresence>
- {wins.some(w=>w.min)&&<div className="tasklist">{wins.filter(w=>w.min).map(w=><button key={w.id} onClick={()=>update(w.id,"min")}>{apps.find(a=>a.id===w.id)?.name||w.id}</button>)}</div>}
- <AnimatePresence>{launch&&<Launcher open={open}/>}</AnimatePresence>{menu&&<div className="context" style={{left:menu.x,top:menu.y}}><button onClick={()=>open("terminal")}>Open Terminal</button><button onClick={()=>setMenu(null)}>Refresh Desktop</button><button onClick={()=>open("monitor")}>System Monitor</button><button onClick={goRecruiter}>Recruiter Mode</button><button onClick={()=>open("about")}>About AMS-sec</button></div>}{toast&&<div className="toast"><I.ShieldCheck/> <span><b>AMS-sec Security</b><br/>{toast}</span></div>}<button className="restart" onClick={restart}><I.RotateCcw size={15}/> Restart AMS-sec OS</button></main>}
-function Launcher({open}:{open:(id:string)=>void}){const [q,setQ]=useState("");const match=apps.filter(a=>a.name.toLowerCase().includes(q.toLowerCase())||a.category.toLowerCase().includes(q.toLowerCase()));return <motion.div initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} exit={{opacity:0,y:12}} className="launcher"><div className="launcher-title">AMS-sec <small>APPLICATIONS</small></div><input autoFocus placeholder="Search applications… (Ctrl K)" value={q} onChange={e=>setQ(e.target.value)}/><div className="appgrid">{match.map(a=><button key={a.id} onClick={()=>open(a.id)}>{icon(a.icon,20)}<span>{a.name}<small>{a.category}</small></span></button>)}</div></motion.div>}
-function Window({win,app,children,close,update,focus}:{win:Win;app:App;children:React.ReactNode;focus:()=>void;close:(id:string)=>void;update:(id:string,k:"min"|"max")=>void}){const dragControls=useDragControls();return <motion.section drag={!win.max} dragControls={dragControls} dragListener={false} dragMomentum={false} dragElastic={.04} dragConstraints={{left:-190,right:360,top:-5,bottom:260}} initial={{opacity:0,scale:.92,y:24}} animate={{opacity:1,scale:1,y:0}} exit={{opacity:0,scale:.92,y:24,transition:{duration:.16}}} transition={{type:"spring",stiffness:360,damping:29}} className={`window ${win.max?"max":""} win-${app.id}`} style={{zIndex:win.z}} onMouseDown={focus}><header className="windowbar" onPointerDown={event=>{if(!win.max)dragControls.start(event)}}><span>{icon(app.icon,16)} {app.name}</span><div onPointerDown={event=>event.stopPropagation()}><button aria-label="Minimize" onClick={()=>update(win.id,"min")}>—</button><button aria-label="Maximize" onClick={()=>update(win.id,"max")}>□</button><button aria-label="Close" className="close" onClick={()=>close(win.id)}>×</button></div></header><div className={`windowcontent ${app.id==="terminal"?"terminal-shell":""}`}>{children}</div></motion.section>}
-function content(id:string,open:(x:string)=>void,recruiter:()=>void):React.ReactNode{ if(id==="terminal")return <Terminal openApp={open}/>;if(id==="about")return <article className="about"><p className="eyebrow">OPERATOR PROFILE / HOME DIRECTORY</p><h1>Mohammed Almas<br/>Akkalath</h1><p>{profile.summary}</p><div className="chips"><span>ISC² CC</span><span>Digital Forensics</span><span>Security Labs</span><span>GreCyberSec President</span></div><button className="primary" onClick={recruiter}>Open Recruiter Mode →</button></article>;if(id==="projects")return <Projects open={open}/>;if(id.startsWith("project:")){const p=projects.find(p=>p.id===id.slice(8));return <Project p={p}/>};if(id==="experience")return <section className="operations"><p className="eyebrow">OPERATION LOG / VERIFIED EXPERIENCE</p>{experience.map(e=><article className="timeline" key={e.role}><div><i></i><span>{e.dates}</span></div><h2>{e.role}</h2><p>{e.org}</p><ul>{e.items.map(x=><li key={x}>{x}</li>)}</ul></article>)}</section>;if(id==="files")return <Files open={open}/>;if(id==="skills")return <section><p className="eyebrow">EVIDENCE-BASED CAPABILITIES</p>{Object.entries(skillGroups).map(([group,skills])=><div className="skillgroup" key={group}><h3>{group}</h3>{skills.map(s=><button key={s} onClick={()=>open("projects")}>{s}</button>)}</div>)}</section>;if(id==="certifications")return <section><p className="eyebrow">INSTALLED SECURITY PACKAGES</p><div className="certs">{certifications.map((c,i)=><article key={c} className={i===0?"featured":""}><small>PACKAGE</small><h3>{i===0?"ISC² CC":c}</h3><p><b>STATUS</b><br/>{i===0?"CERTIFIED":"Completed"}</p><p>{c}</p></article>)}</div></section>;if(id==="education")return <section className="config"><p className="eyebrow">ACADEMIC MODULE RECORD</p><h2>{profile.university}</h2><p>London, UK</p><hr/><h3>{profile.degree}</h3><p>{profile.dates}</p><pre>relevant_coursework = ["Cybersecurity Fundamentals", "Networking & Network Security", "Digital Forensics & Incident Response", "Ethical Hacking", "Vulnerability Analysis"]</pre></section>;if(id==="labs")return <section><p className="eyebrow">CYBER LABS / PRACTICE ENVIRONMENTS</p><div className="filters">Difficulty: Any &nbsp; Platform: Any &nbsp; Status: Any</div>{["TryHackMe","Hack The Box","VulnHub","Personal Lab","Networking Labs","Forensics Labs"].map(x=><article className="lab" key={x}><b>{x}</b><span>Project documentation / machine write-ups coming soon</span><em>Planned</em></article>)}</section>;if(id==="grecybersec")return <section className="command"><p className="eyebrow">GRECYBERSEC COMMAND CENTER</p><h1>President / University of Greenwich</h1><div className="metrics"><b>100+<small>STUDENTS ENGAGED</small></b><b>10+<small>EVENTS & WORKSHOPS</small></b><b>5+<small>TECHNICAL SESSIONS</small></b></div><h3>Mission Log</h3><p>Building a practical, welcoming cybersecurity community through workshops, CTF activities, industry-focused talks and career development.</p><a className="gre-link" href="https://www.grecybersec.co.uk/" target="_blank" rel="noreferrer">Visit the GreCyberSec website ↗</a><div className="pending">EVENTS · WORKSHOPS · CTFS · INDUSTRY SPEAKERS<br/>Details will be added as records are published.</div></section>;if(id==="research")return <section><p className="eyebrow">RESEARCH WORKSPACE</p><div className="research"><small>RESEARCH CONCEPT</small><h2>LLM-Assisted Security Verification of Infrastructure-as-Code</h2><p>Cloud Security · AI Security · Infrastructure-as-Code · Security Verification</p><span>Research direction — no research outcomes claimed.</span></div><div className="chips">{["Cybersecurity","Artificial Intelligence and Security","Cloud Security","Network Security","Digital Forensics","Formal Verification"].map(x=><span key={x}>{x}</span>)}</div></section>;if(id==="mitre")return <section><p className="eyebrow">MITRE ATT&CK-INSPIRED EVIDENCE MAP</p><div className="mitre">{["Reconnaissance","Initial Access","Execution","Persistence","Privilege Escalation","Credential Access","Discovery","Lateral Movement","Collection","Command and Control"].map((x,i)=><article key={x}><b>{x}</b><span>{i===4||i===6?"Active Directory Security Lab":"Evidence mapped as project documentation develops"}</span></article>)}</div></section>;if(id==="network")return <section><p className="eyebrow">OPERATOR NETWORK MAP</p><div className="networkmap"><b>Mohammed Almas</b>{["Cybersecurity","Digital Forensics","Networking","Programming","Leadership","Research"].map(x=><span key={x}>↳ {x}</span>)}</div></section>;if(id==="monitor")return <section className="monitor"><p className="eyebrow">AMSSEC SYSTEM MONITOR</p>{[["Portfolio Modules","12"],["Project Case Files",String(projects.length)],["Cybersecurity Domains","8"],["Certifications",String(certifications.length)],["Leadership Role","Active"],["Research Status","Exploring"]].map(x=><div key={x[0]}><span>{x[0]}</span><b>{x[1]}</b></div>)}<p className="note">Metrics describe this portfolio environment, not real system telemetry.</p></section>;if(id==="contact")return <section className="contact"><p className="eyebrow">SECURE COMMUNICATIONS CHANNEL</p><h2>Let&apos;s connect.</h2><a href={`mailto:${profile.email}`}>{profile.email}</a><div><a className="primary" href={`mailto:${profile.email}`}>Send Email</a><a href={profile.linkedin} target="_blank">Open LinkedIn</a><a href={profile.github} target="_blank">Open GitHub</a></div></section>;if(id==="cv")return <section className="cv"><I.FileWarning size={44}/><h2>CV file not yet installed.</h2><p>Set the CV file path in the central portfolio data when ready.</p><button disabled>Download CV</button></section>;if(id==="settings")return <section><p className="eyebrow">SYSTEM PREFERENCES</p>{["Boot animation","Sound effects","Motion","Terminal font size","Wallpaper selection","Desktop icon size"].map((x,i)=><label className="setting" key={x}>{x}<input type={i<2?"checkbox":"text"} defaultChecked={i===0} defaultValue={i>1?i===2?"Normal":"Default":undefined}/></label>)}</section>;return null}
-function Projects({open}:{open:(x:string)=>void}){return <section><p className="eyebrow">CASE FILES / PROJECT REPOSITORY</p><div className="casegrid">{projects.map((p,i)=><article key={p.id}><small>CASE AMS-{String(i+1).padStart(3,"0")}</small><h3>{p.title}</h3><p>{p.summary}</p><div><b>STATUS</b><span>{p.status}</span><b>ENVIRONMENT</b><span>{p.environment.join(" · ")}</span><b>TOOLS</b><span>{p.tools.join(" · ")}</span></div><button onClick={()=>open(`project:${p.id}`)}>OPEN CASE FILE →</button></article>)}</div></section>}
-function Project({p}:{p:typeof projects[number]|undefined}){
- if(!p)return null;
- return <section className="project"><p className="eyebrow">CASE FILE / {p.id.toUpperCase()}</p><h1>{p.title}</h1><p>{p.summary}</p>
-  <article><h3>Environment</h3><p>{p.environment.join(" · ")}</p></article>
-  <article><h3>Tools Used</h3><p>{p.tools.join(" · ")}</p></article>
-  {p.methodology?.length ? <article className="project-highlights"><h3>Practical Work</h3><ul>{p.methodology.map(item=><li key={item}>{item}</li>)}</ul></article> : <article><h3>Technical Architecture</h3><p>Details to be added as documentation is completed.</p></article>}
-  {p.mitre?.length ? <article><h3>MITRE ATT&CK Mapping</h3><p>{p.mitre.join(" · ")}</p></article> : null}
- </section>
-}function Files({open}:{open:(x:string)=>void}){const [parts,setParts]=useState<string[]>([]);const node=resolvePath(parts)||filesystem;return <section><div className="filebar"><button onClick={()=>setParts(p=>p.slice(0,-1))}>←</button><button onClick={()=>setParts([])}>⌂</button><span>/home/almas{parts.length?"/"+parts.join("/"):""}</span></div><div className="filegrid">{node.children?.map(f=><button key={f.name} onDoubleClick={()=>f.type==="folder"?setParts(p=>[...p,f.name]):f.app&&open(f.app)} onClick={()=>f.type==="folder"?setParts(p=>[...p,f.name]):f.app&&open(f.app)}>{f.type==="folder"?<I.Folder/>:<I.FileText/>}<b>{f.name}</b><small>{f.type}</small></button>)}</div></section>}
+import { Terminal } from "./Terminal";
+import { profile, projects, experience, skillGroups, certifications } from "@/data/portfolio";
+import { filesystem, resolvePath } from "@/data/filesystem";
 
+type App = { id: string; name: string; category: string; icon: keyof typeof I };
+const apps: App[] = [
+  { id: "about", name: "About Me", category: "Portfolio", icon: "UserRound" },
+  { id: "projects", name: "SOC Projects", category: "Portfolio", icon: "FolderKanban" },
+  { id: "skills", name: "Skills", category: "Portfolio", icon: "ShieldCheck" },
+  { id: "experience", name: "Experience", category: "Portfolio", icon: "ScrollText" },
+  { id: "education", name: "Education", category: "Portfolio", icon: "GraduationCap" },
+  { id: "certifications", name: "Certifications", category: "Portfolio", icon: "BadgeCheck" },
+  { id: "grecybersec", name: "GreCyberSec", category: "Portfolio", icon: "Radio" },
+  { id: "contact", name: "Contact", category: "Portfolio", icon: "Send" },
+  { id: "files", name: "File Manager", category: "System", icon: "FolderOpen" },
+  { id: "terminal", name: "Terminal", category: "System", icon: "TerminalSquare" },
+  { id: "monitor", name: "System Monitor", category: "System", icon: "Activity" },
+  { id: "mitre", name: "ATT&CK Matrix", category: "Security", icon: "Grid3X3" },
+  { id: "network", name: "Network Map", category: "Security", icon: "Network" },
+  { id: "cv", name: "CV Viewer", category: "Portfolio", icon: "FileText" },
+  { id: "settings", name: "Settings", category: "System", icon: "Settings" },
+];
+const icon = (name: keyof typeof I, size = 20) => {
+  const C = I[name] as React.ComponentType<{ size?: number; "aria-hidden"?: boolean }>;
+  return <C size={size} aria-hidden />;
+};
+type Win = { id: string; z: number; min?: boolean; max?: boolean; activation?: number };
+const external = { target: "_blank", rel: "noopener noreferrer" };
 
+export function Desktop({ goRecruiter, restart, initialApp }: { goRecruiter: () => void; restart: () => void; initialApp?: string }) {
+  const [wins, setWins] = useState<Win[]>(initialApp ? [{ id: initialApp, z: 2 }] : []);
+  const [launch, setLaunch] = useState(false);
+  const [clock, setClock] = useState(new Date());
+  const [menu, setMenu] = useState<{ x: number; y: number } | null>(null);
+  const launcherButton = useRef<HTMLButtonElement>(null);
+  const open = useCallback((id: string) => {
+    setLaunch(false);
+    setMenu(null);
+    setWins(current => {
+      const z = Math.max(...current.map(w => w.z), 1) + 1;
+      return current.some(w => w.id === id)
+        ? current.map(w => w.id === id ? { ...w, min: false, z, activation: (w.activation ?? 0) + 1 } : w)
+        : [...current, { id, z }];
+    });
+  }, []);
+  useEffect(() => {
+    const timer = setInterval(() => setClock(new Date()), 1000);
+    const keydown = (event: KeyboardEvent) => {
+      if (event.ctrlKey && event.altKey && event.key.toLowerCase() === "t") { event.preventDefault(); open("terminal"); }
+      if (event.ctrlKey && event.key.toLowerCase() === "k") { event.preventDefault(); setLaunch(true); }
+      if (event.key === "Escape") { setLaunch(false); setMenu(null); launcherButton.current?.focus(); }
+    };
+    window.addEventListener("keydown", keydown);
+    return () => { clearInterval(timer); window.removeEventListener("keydown", keydown); };
+  }, [open]);
+  const close = (id: string) => { setWins(current => current.filter(w => w.id !== id)); launcherButton.current?.focus(); };
+  const update = (id: string, key: "min" | "max") => {
+    setWins(current => current.map(w => w.id === id ? { ...w, [key]: !w[key] } : w));
+    if (key === "min") launcherButton.current?.focus();
+  };
 
+  return <main className="desktop" onContextMenu={event => {
+    if ((event.target as HTMLElement).closest(".window, a, input")) return;
+    event.preventDefault();
+    setMenu({ x: Math.max(8, Math.min(event.clientX, window.innerWidth - 182)), y: Math.max(48, Math.min(event.clientY, window.innerHeight - 210)) });
+  }}>
+    <header className="topbar">
+      <button ref={launcherButton} className="brand" onClick={() => setLaunch(value => !value)} aria-label="Open AMS-sec applications" aria-expanded={launch} aria-controls="application-launcher">◈ <span>AMS-sec</span></button>
+      <div className="quick"><button onClick={() => open("files")}>{icon("FolderOpen", 16)} Files</button><button onClick={() => open("terminal")}>{icon("TerminalSquare", 16)} Terminal</button><button onClick={() => open("projects")}>{icon("FolderKanban", 16)} Projects</button></div>
+      <div className="status"><I.ShieldCheck size={15} aria-hidden /><time>{clock.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</time><button onClick={goRecruiter}>Recruiter Mode</button></div>
+    </header>
+    <section className="desktop-welcome" aria-labelledby="desktop-name">
+      <p className="eyebrow">{profile.location} / {profile.professionalStatus}</p>
+      <h1 id="desktop-name">{profile.name}</h1>
+      <p className="desktop-role">{profile.role}</p><p className="desktop-focus">{profile.focus}</p>
+      <div className="desktop-actions"><button className="primary" onClick={() => open("projects")}>View Projects <I.ArrowUpRight size={16} aria-hidden /></button><a href={profile.github} {...external}>GitHub</a><a href={profile.linkedin} {...external}>LinkedIn</a><button onClick={() => open("contact")}>Contact</button></div>
+      <button className="profile-shortcut" onClick={goRecruiter}>Read my full profile <I.ArrowRight size={16} aria-hidden /></button>
+    </section>
+    <nav className="desktop-icons" aria-label="Portfolio applications">{apps.filter(app => ["about", "projects", "experience", "education", "certifications", "skills", "terminal", "contact"].includes(app.id)).map(app => <button className="deskicon" key={app.id} onClick={() => open(app.id)}>{icon(app.icon, 29)}<span>{app.id === "about" ? "about_me.txt" : app.name}</span></button>)}</nav>
+    <AnimatePresence>{wins.filter(w => !w.min).map(w => <Window key={`${w.id}-${w.max ? "max" : "window"}`} win={w} app={apps.find(app => app.id === w.id) || { id: w.id, name: projects.find(p => `project:${p.id}` === w.id)?.title || (w.id === "research" ? "Research" : "Labs"), category: "", icon: "FileText" }} focus={() => setWins(current => current.map(x => x.id === w.id ? { ...x, z: Math.max(...current.map(v => v.z)) + 1 } : x))} close={close} update={update}>{content(w.id, open, goRecruiter)}</Window>)}</AnimatePresence>
+    {wins.some(w => w.min) && <nav className="tasklist" aria-label="Minimized applications">{wins.filter(w => w.min).map(w => <button key={w.id} onClick={() => open(w.id)}>{apps.find(app => app.id === w.id)?.name || projects.find(p => `project:${p.id}` === w.id)?.title || w.id}</button>)}</nav>}
+    <AnimatePresence>{launch && <Launcher open={open} />}</AnimatePresence>
+    {menu && <div className="context" style={{ left: menu.x, top: menu.y }}><button onClick={() => open("terminal")}>Open Terminal</button><button onClick={() => setMenu(null)}>Refresh Desktop</button><button onClick={() => open("monitor")}>System Monitor</button><button onClick={goRecruiter}>Recruiter Mode</button><button onClick={() => open("about")}>About AMS-sec</button></div>}
+    <button className="restart" onClick={restart}><I.RotateCcw size={15} aria-hidden /> Restart AMS-sec OS</button>
+  </main>;
+}
 
+function Launcher({ open }: { open: (id: string) => void }) {
+  const [query, setQuery] = useState("");
+  const match = apps.filter(app => `${app.name} ${app.category} ${app.id}`.toLowerCase().includes(query.toLowerCase()));
+  return <motion.div id="application-launcher" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="launcher"><div className="launcher-title">AMS-sec <small>APPLICATIONS</small></div><input autoFocus aria-label="Search applications" placeholder="Search applications (Ctrl K)" value={query} onChange={event => setQuery(event.target.value)} /><div className="appgrid">{match.map(app => <button key={app.id} onClick={() => open(app.id)}>{icon(app.icon)}<span>{app.name}<small>{app.category}</small></span></button>)}</div>{!match.length && <p className="note" role="status">No matching applications.</p>}</motion.div>;
+}
+
+function Window({ win, app, children, close, update, focus }: { win: Win; app: App; children: React.ReactNode; focus: () => void; close: (id: string) => void; update: (id: string, key: "min" | "max") => void }) {
+  const dragControls = useDragControls();
+  const reduceMotion = useReducedMotion();
+  const panel = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const target = app.id === "terminal" ? panel.current?.querySelector<HTMLInputElement>("input") : panel.current;
+    target?.focus();
+  }, [app.id, win.activation]);
+  return <motion.section ref={panel} tabIndex={-1} aria-label={app.name} role="dialog" drag={!win.max} dragControls={dragControls} dragListener={false} dragMomentum={false} dragElastic={0} dragConstraints={{ left: -190, right: 360, top: -5, bottom: 260 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: reduceMotion ? 0 : .12 }} className={`window ${win.max ? "max" : ""} win-${app.id}`} style={{ zIndex: win.z + 20 }} onPointerDown={focus} onFocus={event => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) focus(); }}>
+    <header className="windowbar" onPointerDown={event => { if (!win.max && window.matchMedia("(min-width: 701px) and (pointer: fine)").matches) dragControls.start(event); }}><span>{icon(app.icon, 16)} {app.name}</span><div onPointerDown={event => event.stopPropagation()}><button aria-label="Minimize" onClick={() => update(win.id, "min")}><I.Minus size={15} aria-hidden /></button><button aria-label={win.max ? "Restore window" : "Maximize"} onClick={() => update(win.id, "max")}><I.Square size={13} aria-hidden /></button><button aria-label="Close" className="close" onClick={() => close(win.id)}><I.X size={16} aria-hidden /></button></div></header>
+    <div className={`windowcontent ${app.id === "terminal" ? "terminal-shell" : ""}`}>{children}</div>
+  </motion.section>;
+}
+
+function content(id: string, open: (id: string) => void, recruiter: () => void): React.ReactNode {
+  if (id === "terminal") return <Terminal openApp={open} />;
+  if (id === "about") return <article className="about"><p className="eyebrow">ABOUT / PROFESSIONAL SUMMARY</p><h2>{profile.name}</h2><p>{profile.role}</p><p>{profile.summary}</p><div className="chips"><span>{profile.professionalStatus}</span><span>ISC² CC</span><span>{profile.location}</span></div><button className="primary" onClick={recruiter}>Read my full profile <I.ArrowRight size={16} aria-hidden /></button></article>;
+  if (id === "projects" || id === "labs") return <Projects open={open} />;
+  if (id.startsWith("project:")) return <Project p={projects.find(project => project.id === id.slice(8))} />;
+  if (id === "experience") return <section className="operations"><p className="eyebrow">PROFESSIONAL EXPERIENCE</p>{experience.map(item => <article className="timeline" key={item.role}><div><i aria-hidden /><span>{item.dates}</span></div><h2>{item.role}</h2><p>{item.org}</p><p>{item.location}{item.arrangement ? ` · ${item.arrangement}` : ""}</p><ul>{item.items.map(text => <li key={text}>{text}</li>)}</ul></article>)}</section>;
+  if (id === "files") return <Files open={open} />;
+  if (id === "skills") return <section><p className="eyebrow">SKILLS / TOOLS & METHODS</p>{Object.entries(skillGroups).map(([group, skills]) => <div className="skillgroup" key={group}><h2>{group}</h2><div className="chips">{skills.map(skill => <span key={skill}>{skill}</span>)}</div></div>)}</section>;
+  if (id === "certifications") return <section><p className="eyebrow">CERTIFICATIONS & PROFESSIONAL STATUS</p><div className="certs">{certifications.map((certification, index) => <article key={certification} className={index < 2 ? "featured" : ""}><I.BadgeCheck size={22} aria-hidden /><h2>{certification}</h2><p>{certification === profile.professionalStatus ? "Professional status" : "Certification / training"}</p></article>)}</div></section>;
+  if (id === "education") return <section className="config"><p className="eyebrow">EDUCATION</p><h2>{profile.university}</h2><p>{profile.location}</p><hr /><h3>{profile.degree}</h3><p>{profile.dates}</p><h3>Relevant coursework</h3><ul className="coursework">{profile.coursework.map(course => <li key={course}>{course}</li>)}</ul></section>;
+  if (id === "grecybersec") {
+    const society = experience.find(item => item.org === profile.university);
+    return <section className="command"><p className="eyebrow">GRECYBERSEC / STUDENT COMMUNITY</p><h2>President, Cyber Security Society</h2><p>{profile.university} · {society?.dates}</p><div className="metrics"><b>100+<small>STUDENTS</small></b><b>10+<small>EVENTS & WORKSHOPS</small></b></div><ul className="coursework">{society?.items.map(item => <li key={item}>{item}</li>)}</ul><a className="gre-link" href="https://www.grecybersec.co.uk/" {...external}>Visit the GreCyberSec website ↗</a></section>;
+  }
+  if (id === "research") return <section><p className="eyebrow">RESEARCH WORKSPACE</p><h2>Research notes</h2><p className="note">No research write-ups published yet. Explore the current SOC projects for my areas of practical focus.</p><button className="primary" onClick={() => open("projects")}>View Projects</button></section>;
+  if (id === "mitre") return <section><p className="eyebrow">MITRE ATT&CK / PROJECT SCOPE</p><h2>Detection and investigation coverage</h2><p className="note">Planned areas of investigation in projects currently in progress. Validated detections will be documented as the labs develop.</p><div className="mitre">{["Initial Access", "Execution", "Persistence", "Privilege Escalation", "Credential Access", "Discovery", "Lateral Movement", "Command and Control"].map(tactic => <article key={tactic}><b>{tactic}</b><span>{projects.filter(project => project.mitre?.includes(tactic)).map(project => project.title.split(":")[0]).join(" · ") || "No project mapping yet"}</span></article>)}</div></section>;
+  if (id === "network") return <section><p className="eyebrow">SKILLS / FOCUS MAP</p><div className="networkmap"><b>{profile.name}</b>{["SOC operations", "Threat detection", "Incident response", "Digital forensics", "Networking", "Security automation"].map(item => <span key={item}>↳ {item}</span>)}</div></section>;
+  if (id === "monitor") return <section className="monitor"><p className="eyebrow">PORTFOLIO INVENTORY</p>{[["Applications", String(apps.length)], ["Projects in progress", String(projects.filter(project => project.status === "In Progress").length)], ["Skill categories", String(Object.keys(skillGroups).length)], ["Certifications and status", String(certifications.length)], ["Experience entries", String(experience.length)]].map(([label, value]) => <div key={label}><span>{label}</span><b>{value}</b></div>)}<p className="note">Counts reflect the content in this portfolio.</p></section>;
+  if (id === "contact") return <section className="contact"><p className="eyebrow">CONTACT / {profile.location.toUpperCase()}</p><h2>Let&apos;s connect.</h2><p>Interested in SOC Analyst, Cybersecurity Analyst and junior security opportunities.</p><a href={`mailto:${profile.email}`}>{profile.email}</a><div><a className="primary" href={`mailto:${profile.email}`}>Send Email</a><a href={profile.linkedin} {...external}>LinkedIn</a><a href={profile.github} {...external}>GitHub</a></div></section>;
+  if (id === "cv") return <section className="cv"><I.FileText size={44} aria-hidden /><h2>CV available on request</h2><p>A downloadable CV has not been added yet.</p><a href={`mailto:${profile.email}?subject=CV%20request`}>Request my CV by email</a></section>;
+  if (id === "settings") return <section className="settings"><p className="eyebrow">DESKTOP / PREFERENCES</p><h2>Choose how to explore</h2><p>Recruiter Mode presents the full portfolio in a single, readable page.</p><button className="primary" onClick={recruiter}>Open Recruiter Mode</button><h3>Accessibility</h3><p>Animations follow your device&apos;s reduced motion preference. Sound effects are off.</p><h3>Keyboard shortcuts</h3><p><kbd>Ctrl + K</kbd> opens applications.<br /><kbd>Ctrl + Alt + T</kbd> opens the terminal.<br /><kbd>Escape</kbd> dismisses the application menu.</p></section>;
+  return <p>This application is unavailable.</p>
+}
+
+function Repository({ project }: { project: typeof projects[number] }) {
+  return project.repository ? <a href={project.repository} {...external}>GitHub <I.ArrowUpRight size={14} aria-hidden /></a> : <button disabled aria-label={`GitHub repository for ${project.title} is not yet available`}>GitHub unavailable</button>;
+}
+
+function Projects({ open }: { open: (id: string) => void }) {
+  return <section><p className="eyebrow">CASE FILES / SOC PROJECTS</p><h2 className="desktop-section-title">Detection, investigation and response</h2><p className="note">Projects are in progress. Repositories and findings will be linked when available.</p><div className="casegrid">{projects.map((project, index) => <article key={project.id} className={project.featured ? "featured-case" : ""}><div className="case-heading"><small>CASE {String(index + 1).padStart(2, "0")}{project.featured ? " / FEATURED" : ""}</small><span className="project-status">{project.status}</span></div><h3>{project.title}</h3><p className="case-purpose">{project.summary}</p><p>{project.description}</p><h4>Tools</h4><div className="project-tags">{project.tools.map(tool => <span key={tool}>{tool}</span>)}</div><h4>Security concepts</h4><p>{project.skills.join(" · ")}</p><div className="case-actions"><button onClick={() => open(`project:${project.id}`)} aria-label={`View project: ${project.title}`}>View Project <I.ArrowRight size={14} aria-hidden /></button><Repository project={project} /></div></article>)}</div></section>;
+}
+
+function Project({ p }: { p: typeof projects[number] | undefined }) {
+  if (!p) return <p>Project not found. Open SOC Projects to browse current work.</p>;
+  return <section className="project"><p className="eyebrow">CASE FILE / {p.status.toUpperCase()}</p><h2>{p.title}</h2><p>{p.summary}</p><p>{p.description}</p><article><h3>Lab environment</h3><p>{p.environment.join(" · ")}</p></article><article><h3>Core tools</h3><div className="project-tags">{p.tools.map(tool => <span key={tool}>{tool}</span>)}</div></article><article><h3>Security concepts</h3><p>{p.skills.join(" · ")}</p></article>{!!p.methodology?.length && <article className="project-highlights"><h3>Planned workflow</h3><ul>{p.methodology.map(item => <li key={item}>{item}</li>)}</ul></article>}{!!p.mitre?.length && <article><h3>MITRE ATT&CK focus</h3><p>{p.mitre.join(" · ")}</p></article>}<p className="note">Implementation and investigation results will be published as this project develops.</p><div className="case-actions"><Repository project={p} /></div></section>;
+}
+
+function Files({ open }: { open: (id: string) => void }) {
+  const [parts, setParts] = useState<string[]>([]);
+  const node = resolvePath(parts) || filesystem;
+  return <section><div className="filebar"><button aria-label="Parent folder" disabled={!parts.length} onClick={() => setParts(current => current.slice(0, -1))}>←</button><button aria-label="Home folder" onClick={() => setParts([])}>⌂</button><span>/home/almas{parts.length ? "/" + parts.join("/") : ""}</span></div><div className="filegrid">{node.children?.map(file => <button key={file.name} onClick={() => file.type === "folder" ? setParts(current => [...current, file.name]) : file.app && open(file.app)}>{file.type === "folder" ? <I.Folder aria-hidden /> : <I.FileText aria-hidden />}<b>{file.name}</b><small>{file.type}</small></button>)}</div>{!node.children?.length && <p className="note">No files published here yet.</p>}</section>;
+}
